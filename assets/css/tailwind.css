@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    body{
+        @apply bg-white;
+        font-family: 'Inter', sans-serif;
+        -webkit-transition: background-color 500ms ease-out;
+            -moz-transition: background-color 500ms ease-out;
+            -o-transition: background-color 500ms ease-out;
+            transition: background-color 500ms ease-out;
+    }
+        .dark body{
+        
+        @apply bg-myColor;
+    }
+}
