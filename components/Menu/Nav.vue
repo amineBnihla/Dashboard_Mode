@@ -1,5 +1,5 @@
 <template>
-  <div class="min-w-[200px]">
+  <div class="">
     <h2
       class="text-14 text-myColor dark:text-white dark:text-opacity-60 text-opacity-60 mb-2 pl-3"
     >
@@ -10,7 +10,7 @@
         class="hover:bg-myColor dark:hover:bg-white dark:hover:bg-opacity-10 hover:bg-opacity-5 rounded-lg mb-1"
       >
         <NuxtLink to="/" class="flex items-center gap-1 py-1">
-          <div class="min-w-[20px] ml-1 grid place-items-center">
+          <div class="min-w-[10px] overflow-hidden  grid place-items-center">
             <Icon
               name="ic:round-keyboard-arrow-right"
               size="20"
@@ -20,12 +20,13 @@
           <Icon
             name="ph:chart-pie-slice"
             size="20"
-            class="text-myColor mr-1 dark:text-white"
+            class="text-myColor mr-1 min-w-[20px] dark:text-white"
           />
           <span class="text-14 text-myColor dark:text-white">Default</span>
         </NuxtLink>
+        <ul></ul>
       </li>
-      <li
+      <!-- <li
         class="hover:bg-myColor dark:hover:bg-white dark:hover:bg-opacity-10 hover:bg-opacity-5 rounded-lg"
       >
         <NuxtLink to="/" class="text-myColor flex items-center gap-1 py-1">
@@ -43,7 +44,7 @@
           />
           <span class="text-14 dark:text-white">Ecommerce</span>
         </NuxtLink>
-      </li>
+      </li> -->
     </ul>
   </div>
 </template>
