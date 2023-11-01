@@ -1,9 +1,10 @@
 <template>
   <div
-    class="fixed w-0 px-4 h-screen transition-[width,left,right,background-color] duration-500 ltr:left-0 rtl:right-0 top-0 ltr:border-r rtl:border-l border-border bg-white dark:bg-myColor z-50 border-opacity-10 dark:border-white dark:border-opacity-10 overflow-hidden"
-    :class="{ 'w-[212px]': modelValue }"
+    class="fixed  h-screen transition-[width,left,right,background-color] duration-500 ltr:left-0 rtl:right-0 top-0 ltr:border-r rtl:border-l border-border bg-white dark:bg-myColor z-50 border-opacity-10 dark:border-white dark:border-opacity-10 overflow-hidden"
+    :class="[modelValue ? 'w-[212px] ' : 'w-0 '  ]"
   >
-    <div class="flex justify-end py-2 px-4">
+  <div class="mx-4">
+    <div class="flex justify-end py-2 ">
       <button
         @click="$emit('update:modelValue', !modelValue)"
         class="text-myColor dark:text-white visible lg:hidden"
@@ -62,7 +63,7 @@
       </ul>
     </div>
     <MenuNav></MenuNav>
-    <div></div>
+   </div>
   </div>
 </template>
 
