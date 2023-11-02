@@ -1,4 +1,6 @@
 {
     "dashboard":"Dashboard",
-    "default":"default"
+    "default":"default",
+    "ecommerce":"ecommerce",
+    "overview":"overview"
 }
