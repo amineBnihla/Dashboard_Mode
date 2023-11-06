@@ -1,15 +1,19 @@
 <template>
   <div
-    class="fixed h-screen transition-[width,left,right,background-color] duration-500 ltr:left-0 rtl:right-0 top-0 ltr:border-r rtl:border-l border-border bg-white dark:bg-myColor z-50 border-opacity-10 dark:border-white dark:border-opacity-10 overflow-hidden"
+    class="fixed h-screen overflow-y-auto transition-[width,left,right,background-color] duration-500 ltr:left-0 rtl:right-0 top-0 ltr:border-r rtl:border-l border-border bg-white dark:bg-myColor z-50 border-opacity-10 dark:border-white dark:border-opacity-10 overflow-hidden"
     :class="[modelValue ? 'w-[212px] ' : 'w-0 ']"
   >
     <div class="mx-4">
       <div class="flex justify-end py-2">
         <button
           @click="$emit('update:modelValue', !modelValue)"
-          class="text-myColor dark:text-white visible lg:hidden"
+          class="visible lg:hidden"
         >
-          X
+          <Icon
+            name="mdi:close"
+            size="22"
+            class="text-myColor dark:text-white"
+          ></Icon>
         </button>
       </div>
 
@@ -22,15 +26,15 @@
         />
         <span class="text-14 text-myColor dark:text-white">ByeWind</span>
       </div>
-      <div class="pl-3 min-w-[200px] mb-9">
+      <div class="pl-3 min-w-[200px] mb-7">
         <div class="flex gap-5">
           <span
             class="text-14 capitalize text-myColor dark:text-white dark:text-opacity-60 text-opacity-60"
-            >Favorite</span
+            >{{ $t("favorite") }}</span
           >
           <span
             class="text-14 capitalize text-myColor dark:text-white dark:text-opacity-40 text-opacity-40"
-            >Recently</span
+            >{{ $t("recently") }}</span
           >
         </div>
         <ul class="py-2">
@@ -42,9 +46,9 @@
               <Icon
                 name="ci:dot-02-s"
                 size="26"
-                class="text-myColor dark:text-white dark:text-opacity-20 text-opacity-20 mr-1"
+                class="text-myColor dark:text-white dark:text-opacity-20 text-opacity-20"
               />
-              <span>Overview</span>
+              <span>{{ $t("overview") }}</span>
             </NuxtLink>
           </li>
           <li>
@@ -55,14 +59,15 @@
               <Icon
                 name="ci:dot-02-s"
                 size="26"
-                class="text-myColor dark:text-white dark:text-opacity-20 text-opacity-20 mr-1"
+                class="text-myColor dark:text-white dark:text-opacity-20 text-opacity-20"
               />
-              <span>Projects</span>
+              <span>{{ $t("project") }}</span>
             </NuxtLink>
           </li>
         </ul>
       </div>
       <MenuNav :links="Links"></MenuNav>
+      <MenuNav :links="LinksPaes"></MenuNav>
     </div>
   </div>
 </template>
@@ -88,6 +93,77 @@ const Links = {
       name: "ecommerce",
       to: "/",
       icon: "ph:shopping-bag-open-duotone",
+      submenu: [
+        {
+          to: "/",
+          name: "overview",
+        },
+      ],
+    },
+    {
+      name: "project",
+      to: "/",
+      icon: "ph:folder-notch",
+      submenu: [
+        {
+          to: "/",
+          name: "overview",
+        },
+      ],
+    },
+    {
+      name: "online courses",
+      to: "/",
+      icon: "ph:book-open-duotone",
+      submenu: [
+        {
+          to: "/",
+          name: "overview",
+        },
+      ],
+    },
+  ],
+};
+const LinksPaes = {
+  title: "pages",
+  items: [
+    {
+      name: "default",
+      to: "/",
+      icon: "ph:chart-pie-slice",
+      submenu: [
+        {
+          to: "/",
+          name: "overview",
+        },
+      ],
+    },
+    {
+      name: "ecommerce",
+      to: "/",
+      icon: "ph:shopping-bag-open-duotone",
+      submenu: [
+        {
+          to: "/",
+          name: "overview",
+        },
+      ],
+    },
+    {
+      name: "project",
+      to: "/",
+      icon: "ph:folder-notch",
+      submenu: [
+        {
+          to: "/",
+          name: "overview",
+        },
+      ],
+    },
+    {
+      name: "online courses",
+      to: "/",
+      icon: "ph:book-open-duotone",
       submenu: [
         {
           to: "/",

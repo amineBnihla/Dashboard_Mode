@@ -10,7 +10,7 @@
         @sidebar-toggle="isActiveSideBar = !isActiveSideBar"
         @sideright-toggle="isActiveSideRight = !isActiveSideRight"
       />
-      <div>
+      <div class="p-5 h-full">
         <slot></slot>
       </div>
     </div>

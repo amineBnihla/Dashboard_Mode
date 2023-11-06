@@ -15,4 +15,33 @@
         
         @apply bg-myColor;
     }
+        /* width */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+    
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #e2e2e2;
+        }
+       .dark ::-webkit-scrollbar-track {
+            background: #a9a9a9;
+        }
+    
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #adadad;
+            border-radius: 5px;
+        }
+     .dark ::-webkit-scrollbar-thumb {
+         background: #707070;
+         border-radius: 5px;
+     }
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgb(108, 107, 107)767;
+        }
+       .dark ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
 }

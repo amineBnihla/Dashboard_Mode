@@ -2,5 +2,11 @@
     "dashboard":"Dashboard",
     "default":"default",
     "ecommerce":"ecommerce",
-    "overview":"overview"
+    "overview":"overview",
+    "project":"project",
+    "online courses":"online courses",
+    "favorite":"Favorite",
+    "recently":"recently",
+    "pages":"pages",
+    "notifications":"notifications"
 }
