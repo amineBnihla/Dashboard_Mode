@@ -10,7 +10,9 @@ export default {
         lightGreen:'#E3F5FF',
         lightBlue:'#E5ECF6',
         lighterBlue:'F7F9FB',
-        transparent : 'transparent'
+        transparent : 'transparent',
+        bgchart:"#F7F9FB",
+        lineColor:"#A8C5DA"
       },
      fontSize:{
        12:"0.75rem",

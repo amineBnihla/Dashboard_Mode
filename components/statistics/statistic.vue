@@ -1,8 +1,6 @@
-
-import type { StatisticsStatistic } from '#build/components';
 <template>
   <div
-    class="px-7 py-5 rounded-2xl min-w-[150px] flex-1"
+    class="px-7 py-5 rounded-2xl min-w-full md:min-w-[150px] flex-1"
     :class="[statistic.color == 1 ? 'bg-lightGreen' : 'bg-lightBlue']"
   >
     <h2 class="text-myColor text-14 font-semibold mb-3">

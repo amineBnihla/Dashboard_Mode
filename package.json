@@ -18,5 +18,9 @@
     "nuxt-icon": "^0.6.1",
     "vue": "^3.3.7",
     "vue-router": "^4.2.5"
+  },
+  "dependencies": {
+    "apexcharts": "^3.44.0",
+    "vue3-apexcharts": "^1.4.4"
   }
 }

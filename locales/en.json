@@ -8,5 +8,9 @@
     "favorite":"Favorite",
     "recently":"recently",
     "pages":"pages",
-    "notifications":"notifications"
+    "notifications":"notifications",
+    "activities":"activities",
+    "view":"view",
+    "visits":"visits",
+    "new users":"new users"
 }

@@ -10,7 +10,9 @@
         @sidebar-toggle="isActiveSideBar = !isActiveSideBar"
         @sideright-toggle="isActiveSideRight = !isActiveSideRight"
       />
-      <div class="p-5 h-full">
+      <div
+        class="p-5 h-[calc(100vh-110px)] md:h-[calc(100vh-68px)] overflow-y-auto"
+      >
         <slot></slot>
       </div>
     </div>
