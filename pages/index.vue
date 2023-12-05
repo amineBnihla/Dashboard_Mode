@@ -32,6 +32,9 @@
         </li>
       </ul>
     </div>
+    <ChartsBarChart class="col-span-4 md:col-span-7" />
+
+    <ChartsPieChart class="col-span-4 md:col-span-5" />
   </div>
 </template>
 

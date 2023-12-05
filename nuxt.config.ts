@@ -15,8 +15,30 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     'nuxt-icon',
       '@nuxtjs/i18n',
+      'nuxt-primevue',
+      [
+
+             '@vee-validate/nuxt',
+      {
+        // disable or enable auto imports
+        autoImports: true,
+        }
+      ]
+    
+
       
   ],
+
+     primevue: {
+        importPT: { as: 'MyCustomPreset', from: '~/assets/presets/mypreset.js'},
+      options: {
+        unstyled: true,},
+    
+         usePrimeVue: true,
+          components: {
+        include: ['DataTable',"Column"]
+    }
+    },
    colorMode: {
     classSuffix: ''
   },

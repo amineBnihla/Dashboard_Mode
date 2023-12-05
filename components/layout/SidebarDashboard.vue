@@ -95,8 +95,8 @@ const Links = {
       icon: "ph:shopping-bag-open-duotone",
       submenu: [
         {
-          to: "/",
-          name: "overview",
+          to: "/user",
+          name: "users",
         },
       ],
     },

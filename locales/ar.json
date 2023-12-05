@@ -12,5 +12,31 @@
     "view":"الاشعارات",
     "visits":"الاشعارات",
     "new users":"الاشعارات",
-    "activities":"الاشعارات"
+    "activities":"الاشعارات",
+    "Traffic by Device":"التحويل حسب الجهاز",
+    "Total Users":"إجمالي المستخدمين",
+    "Total Projects":"إجمالي المشاريع",
+    "Operating Status":"حالة التشغيل",
+    "Current week":"الأسبوع الحالي",
+    "Previous week":"الاسبوع السابق",
+    "Traffic by location":"التحويل حسب الموقع",
+    "Email":"البريد الالكتروني",
+    "User Name":"اسم المستخدم",
+    "Name":"الاسم الكامل",
+    "City":"المدينة",
+    "Phone":"الهاتف",
+    "Add":"اضافة",
+    "Add_user":" اضافة مستخدم",
+    "Edit":"تحديث",
+    "Edit_user":" تحديث المستخدم",
+    "Username" : "اسم المستخدم",
+    "Firstname" : "اسم العائلي",
+    "Lastname" : "اسم الشخصي",
+    "Cancel":"الغاء",
+    "Users":"المستخدمين",
+    "email_msg":"البريد الالكتروني غير صالح",
+    "required_field":"يجب ملء {0}",
+    "phone_validation":"ادخل رقم هاتف صالح"
+    
+
 }

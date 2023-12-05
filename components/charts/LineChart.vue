@@ -5,15 +5,15 @@
     >
       <div class="flex gap-2 md:gap-5 items-center">
         <h3 class="text-14 text-myColor dark:text-white font-semibold">
-          Total Users
+          {{ $t("Total Users") }}
         </h3>
         <span
           class="text-myColor text-opacity-40 dark:text-white dark:text-opacity-40 text-14"
-          >Total Projects</span
+          >{{ $t("Total Projects") }}</span
         >
         <span
           class="text-myColor text-opacity-40 dark:text-white dark:text-opacity-40 text-14"
-          >Operating Status</span
+          >{{ $t("Operating Status") }}</span
         >
       </div>
       <div
@@ -22,13 +22,15 @@
         <!-- <span class="text-my">|</span> -->
         <div class="flex items-center gap-2">
           <div class="w-1 h-1 rounded-full bg-lineColor"></div>
-          <span class="text-myColor dark:text-white text-12">Current week</span>
+          <span class="text-myColor dark:text-white text-12">{{
+            $t("Current week")
+          }}</span>
         </div>
         <div class="flex items-center gap-2">
           <div class="w-1 h-1 rounded-full bg-myColor dark:bg-white"></div>
-          <span class="text-myColor dark:text-white text-12"
-            >Previous week</span
-          >
+          <span class="text-myColor dark:text-white text-12">{{
+            $t("Previous week")
+          }}</span>
         </div>
       </div>
     </div>
@@ -47,7 +49,12 @@
 const black = ref("#1c1c1c");
 const blueSky = ref("#A8C5DA");
 const textChart = ref("#1c1c1c66");
+const { locale } = useI18n();
 const colorMode = useColorMode();
+watch(locale, (newVal) => {
+  console.log(newVal);
+  changeLang(newVal);
+});
 watch(
   () => colorMode.preference,
   (newVal) => {
@@ -67,8 +74,77 @@ function isDark(newVal) {
     };
   }
 }
+function changeLang(lang) {
+  if (lang == "en") {
+    chartOptions.value = {
+      ...chartOptions.value,
+      xaxis: {
+        ...chartOptions.value.xaxis,
+        opposite: false,
+        categories: [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+        ],
+      },
+      yaxis: {
+        ...chartOptions.value.yaxis,
+        opposite: false,
+        labels: {
+          ...chartOptions.value.yaxis.labels,
+          align: "right",
+          offsetX: 0,
+          formatter: (value) => {
+            if (value >= 1000000) return +value.toString().slice(0, -6) + "M";
+            if (value >= 1000) return +value.toString().slice(0, -3) + "K";
+            return value;
+          },
+        },
+      },
+    };
+  } else if (lang == "ar") {
+    chartOptions.value = {
+      ...chartOptions.value,
+      xaxis: {
+        ...chartOptions.value.xaxis,
+        opposite: true,
+        categories: [
+          "يناير",
+          "فبراير",
+          "مارس",
+          "أبريل",
+          "مايو",
+          "يونيو",
+          "يوليو",
+          "أغسطس",
+        ],
+      },
+      yaxis: {
+        ...chartOptions.value.yaxis,
+        opposite: true,
+        labels: {
+          ...chartOptions.value.yaxis.labels,
+          align: "right",
+          offsetX: 25,
+          formatter: (value) => {
+            if (value >= 1000000) return +value.toString().slice(0, -6) + "M";
+            if (value >= 1000) return +value.toString().slice(0, -3) + "K";
+            return value;
+          },
+        },
+      },
+    };
+  }
+}
 onMounted(() => {
   isDark(colorMode.preference);
+  changeLang(locale.value);
 });
 const series = [
   {
@@ -99,6 +175,7 @@ const chartOptions = ref({
     toolbar: {
       show: false,
     },
+    fontFamily: "Inter, sans-serif",
   },
   legend: {
     show: false,
@@ -142,8 +219,6 @@ const chartOptions = ref({
     },
   },
   yaxis: {
-    opposite: true,
-
     tickAmount: 3,
     min: 0,
     max: 30000000,
@@ -152,11 +227,6 @@ const chartOptions = ref({
         colors: textChart.value,
         fontSize: "12px",
         cssClass: "apexcharts-xaxis-label",
-      },
-      formatter: (value) => {
-        if (value >= 1000000) return +value.toString().slice(0, -6) + "M";
-        if (value >= 1000) return +value.toString().slice(0, -3) + "K";
-        return value;
       },
     },
   },
