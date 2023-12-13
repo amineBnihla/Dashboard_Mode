@@ -27,7 +27,6 @@ const textChart = ref("#1c1c1c66");
 const { locale } = useI18n();
 
 watch(locale, (newVal) => {
-  console.log(newVal);
   changeLang(newVal);
 });
 function changeLang(lang) {

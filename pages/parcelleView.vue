@@ -1,0 +1,11 @@
+<template>
+  <ClientOnly>
+    <LazyMapLeaflet />
+  </ClientOnly>
+</template>
+
+<script setup>
+</script>
+
+<style lang="scss" scoped>
+</style>

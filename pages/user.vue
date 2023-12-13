@@ -124,6 +124,7 @@
                 />
               </button>
               <button
+                @click="deleteUser(item.id)"
                 class="dark:bg-gray-800 bg-gray-200 hover:bg-slate-300 cursor-pointer dark:hover:bg-gray-700 rounded-md w-7 h-7 grid place-items-center"
               >
                 <Icon
@@ -216,8 +217,9 @@
 
 <script setup>
 import * as yup from "yup";
+const colorMode = useColorMode();
 const openModel = ref(false);
-
+import Swal from "sweetalert2";
 const headers = [
   { text: "Email", value: "email" },
   { text: "User Name", value: "username" },
@@ -335,6 +337,44 @@ function AddUserModal() {
   idUser = 0;
   openModel.value = true;
   resetForm();
+}
+async function deleteUser(id) {
+  await Swal.fire({
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, delete it!",
+  }).then(async (result) => {
+    if (result.isConfirmed) {
+      const { error, data } = await useFetch(
+        "https://fakestoreapi.com/users/" + id,
+        {
+          method: "DELETE",
+        }
+      );
+      console.log(error, data);
+      if (error.value) {
+        Swal.fire({
+          title: "Error!",
+          text: "Your file has been deleted.",
+          icon: "error",
+          showConfirmButton: false,
+          timer: 1000,
+        });
+        return;
+      }
+      users.value = users.value.filter((item) => item.id != id);
+      Swal.fire({
+        icon: "success",
+        title: "Your work has been saved",
+        showConfirmButton: false,
+        timer: 1000,
+      });
+    }
+  });
 }
 definePageMeta({
   layout: "layout-dashboard",

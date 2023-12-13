@@ -106,7 +106,7 @@ const Links = {
       icon: "ph:folder-notch",
       submenu: [
         {
-          to: "/",
+          to: "/parcelleView",
           name: "overview",
         },
       ],
