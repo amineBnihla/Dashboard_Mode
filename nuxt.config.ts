@@ -6,7 +6,7 @@ export default defineNuxtConfig({
         {rel:"preconnect" ,href:"https://fonts.googleapis.com" },
         {rel:"preconnect" ,href:"https://fonts.gstatic.com" },
         {href:"https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap", rel:"stylesheet" },
-    
+     
     ],
     }
 },
@@ -14,6 +14,7 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
     'nuxt-icon',
+     'nuxt3-leaflet',
       '@nuxtjs/i18n',
       'nuxt-primevue',
       [
@@ -28,7 +29,8 @@ export default defineNuxtConfig({
 
       
   ],
-
+ // plugins:[{src:'~/plugins/leaflet.js'}],
+ //css:['leaflet/dist/leaflet.css'],
      primevue: {
         importPT: { as: 'MyCustomPreset', from: '~/assets/presets/mypreset.js'},
       options: {

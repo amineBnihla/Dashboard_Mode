@@ -1,7 +1,5 @@
 <template>
-  <ClientOnly>
-    <LazyMapLeaflet />
-  </ClientOnly>
+  <LazyMapLeaflet />
 </template>
 
 <script setup>

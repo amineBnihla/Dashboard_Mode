@@ -12,8 +12,12 @@
         :key="index"
         @click="OpenSubMenu"
       >
-        <NuxtLink :to="link?.to" class="flex items-center gap-[2px] py-1">
-          <div class="min-w-[10px] overflow-hidden grid place-items-center">
+        <NuxtLink
+          v-if="link.submenu?.length == 0 || (!link.submenu && link?.to)"
+          :to="link?.to"
+          class="flex items-center gap-[2px] py-1"
+        >
+          <div class="min-w-[20px] overflow-hidden grid place-items-center">
             <Icon
               v-if="link.submenu?.length > 0"
               name="ic:round-keyboard-arrow-right"
@@ -31,6 +35,25 @@
             $t(link?.name)
           }}</span>
         </NuxtLink>
+        <div v-else class="flex cursor-pointer items-center gap-[2px] py-1">
+          <div class="min-w-[10px] overflow-hidden grid place-items-center">
+            <Icon
+              v-if="link.submenu?.length > 0"
+              name="ic:round-keyboard-arrow-right"
+              size="20"
+              class="text-myColor arrowOpen dark:text-white dark:text-opacity-30 text-opacity-30"
+            />
+          </div>
+          <Icon
+            :name="link?.icon"
+            size="20"
+            class="text-myColor ltr:mr-1 rtl:ml-1 min-w-[20px] dark:text-white"
+          />
+
+          <span class="text-14 text-myColor dark:text-white capitalize">{{
+            $t(link?.name)
+          }}</span>
+        </div>
 
         <ul
           class="mt-1 overflow-hidden listSubMenu max-h-0 transition-[max-height] duration-500 ease-in-out"

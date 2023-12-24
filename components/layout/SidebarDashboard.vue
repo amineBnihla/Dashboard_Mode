@@ -107,7 +107,11 @@ const Links = {
       submenu: [
         {
           to: "/parcelleView",
-          name: "overview",
+          name: "Map",
+        },
+        {
+          to: "/mapGoogleView",
+          name: "Google Map",
         },
       ],
     },
@@ -115,12 +119,6 @@ const Links = {
       name: "online courses",
       to: "/",
       icon: "ph:book-open-duotone",
-      submenu: [
-        {
-          to: "/",
-          name: "overview",
-        },
-      ],
     },
   ],
 };
