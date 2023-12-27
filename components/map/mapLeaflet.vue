@@ -7,15 +7,7 @@
         layer-type="base"
         name="OpenStreetMap"
       />
-      <LPolygon
-        :lat-lngs="[
-          [37, -109.05],
-          [41, -109.03],
-          [41, -102.05],
-          [37, -102.04],
-        ]"
-        color="red"
-      ></LPolygon>
+      <LPolygon :lat-lngs="lngLatPoly" color="red"></LPolygon>
       <LMarker :lat-lng="[37, -109.05]">
         <l-popup>
           <div class="p-2">
@@ -39,8 +31,19 @@
 <script setup>
 const zoom = ref(2);
 const showMap = ref(false);
+const lngLatPoly = ref([
+  [37, -109.05],
+  [41, -109.03],
+  [41, -102.05],
+  [37, -102.04],
+]);
 const clickHandler = () => {
-  alert("Hello");
+  lngLatPoly.value = [
+    [27, -100],
+    [37, -100],
+    [37, -90],
+    [27, -90],
+  ];
 };
 onMounted(() => {});
 </script>
